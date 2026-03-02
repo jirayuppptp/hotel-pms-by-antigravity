@@ -1,0 +1,151 @@
+.settings-page {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.settings-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+.add-room-form {
+    background-color: var(--color-bg-main);
+    padding: 24px;
+    border-radius: var(--radius-lg);
+    margin-bottom: 32px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    align-items: flex-end;
+    animation: slideDown 0.3s ease-out;
+}
+
+.form-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.field-icon {
+    position: absolute;
+    left: 12px;
+    color: var(--color-text-muted);
+}
+
+.input-field.pill-icon {
+    padding-left: 36px;
+}
+
+.settings-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.settings-table th {
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    border-bottom: 2px solid var(--color-bg-main);
+}
+
+.settings-table td {
+    padding: 16px;
+    border-bottom: 1px solid var(--color-bg-main);
+}
+
+.settings-table tr:hover td {
+    background-color: var(--color-bg-main);
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.price-tag {
+    font-weight: 800;
+    color: var(--color-primary);
+    background-color: var(--color-primary-light);
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
+}
+
+.type-icon-wrapper {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-md);
+    background-color: var(--color-bg-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+}
+
+.text-right {
+    text-align: right;
+}
+
+.btn-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+}
+
+.empty-state {
+    padding: 48px;
+    text-align: center;
+    color: var(--color-text-muted);
+    font-style: italic;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .add-room-form {
+        grid-template-columns: 1fr;
+    }
+
+    .settings-table thead {
+        display: none;
+    }
+
+    .settings-table td {
+        display: block;
+        padding: 8px 0;
+        border: none;
+    }
+
+    .settings-table td:first-child {
+        padding-top: 16px;
+    }
+
+    .settings-table td:last-child {
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--color-bg-main);
+    }
+}

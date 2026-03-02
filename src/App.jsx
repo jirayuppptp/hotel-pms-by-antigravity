@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard';
 import FrontDesk from './pages/FrontDesk';
 import Housekeeping from './pages/Housekeeping';
 import Accounting from './pages/Accounting';
+import Settings from './pages/Settings';
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -26,6 +27,7 @@ function App() {
             <Route path="/front-desk" element={<FrontDesk />} />
             <Route path="/housekeeping" element={<Housekeeping />} />
             <Route path="/accounting" element={<Accounting />} />
+            <Route path="/settings" element={<Settings />} />
           </Routes>
         </div>
       </div>
