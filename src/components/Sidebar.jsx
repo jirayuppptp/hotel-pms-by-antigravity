@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { LayoutDashboard, Users, Brush, Calculator, LogOut, Settings } from 'lucide-react';
 import './Sidebar.css';
 
-const Sidebar = () => {
+const Sidebar = ({ isOpen, onClose }) => {
     const menuItems = [
         { path: '/dashboard', name: 'Overview', icon: <LayoutDashboard size={20} /> },
         { path: '/front-desk', name: 'แผนกต้อนรับ', icon: <Users size={20} /> },
@@ -11,7 +11,7 @@ const Sidebar = () => {
     ];
 
     return (
-        <aside className="sidebar">
+        <aside className={`sidebar ${isOpen ? 'mobile-open' : ''}`}>
             <div className="sidebar-header">
                 <div className="logo">
                     <span className="logo-icon bg-gradient-primary">H</span>
@@ -26,6 +26,7 @@ const Sidebar = () => {
                             <NavLink
                                 to={item.path}
                                 className={({ isActive }) => isActive ? 'nav-item active' : 'nav-item'}
+                                onClick={onClose}
                             >
                                 {item.icon}
                                 <span>{item.name}</span>
@@ -38,7 +39,7 @@ const Sidebar = () => {
             <div className="sidebar-footer">
                 <ul>
                     <li>
-                        <NavLink to="/settings" className="nav-item">
+                        <NavLink to="/settings" className="nav-item" onClick={onClose}>
                             <Settings size={20} />
                             <span>Settings</span>
                         </NavLink>

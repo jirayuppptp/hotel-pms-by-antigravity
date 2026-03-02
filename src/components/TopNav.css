@@ -9,6 +9,17 @@
     z-index: 5;
 }
 
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+}
+
+.menu-toggle {
+    display: none;
+}
+
 .search-container {
     flex: 1;
     max-width: 480px;
@@ -30,6 +41,7 @@
     color: var(--color-text-muted);
     transition: all var(--transition-fast);
     position: relative;
+    flex-shrink: 0;
 }
 
 .icon-btn:hover {
@@ -92,4 +104,22 @@
 .user-role {
     font-size: 0.75rem;
     color: var(--color-text-muted);
+}
+
+@media (max-width: 768px) {
+    .top-nav {
+        padding: 0 16px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .search-container {
+        display: none;
+    }
+
+    .user-info {
+        display: none;
+    }
 }

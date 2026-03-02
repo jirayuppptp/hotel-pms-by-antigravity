@@ -1,17 +1,22 @@
-import { Bell, Search, User } from 'lucide-react';
+import { Bell, Search, User, Menu } from 'lucide-react';
 import './TopNav.css';
 
-const TopNav = () => {
+const TopNav = ({ onMenuToggle }) => {
     return (
         <header className="top-nav">
-            <div className="search-container">
-                <div className="search-wrapper">
-                    <Search className="search-icon" size={18} />
-                    <input
-                        type="text"
-                        className="input-field"
-                        placeholder="Search bookings, guests, or rooms..."
-                    />
+            <div className="nav-left">
+                <button className="icon-btn menu-toggle" onClick={onMenuToggle}>
+                    <Menu size={20} />
+                </button>
+                <div className="search-container">
+                    <div className="search-wrapper">
+                        <Search className="search-icon" size={18} />
+                        <input
+                            type="text"
+                            className="input-field"
+                            placeholder="Search..."
+                        />
+                    </div>
                 </div>
             </div>
 
@@ -27,12 +32,12 @@ const TopNav = () => {
                     </div>
                     <div className="user-info">
                         <span className="user-name">Manager</span>
-                        <span className="user-role">Admin</span>
                     </div>
                 </div>
             </div>
         </header>
     );
 };
+
 
 export default TopNav;
